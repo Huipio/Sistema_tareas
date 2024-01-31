@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Registro de Tareas</title>
+</head>
+<body>
+    
+<div class="container">
+    <h1>Registro de Tareas</h1>
+  
+    <div class="form-group">
+      <label for="taskInput">Nueva Tarea:</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="taskInput" placeholder="Ingrese una nueva tarea">
+        <div class="input-group-append">
+          <button class="btn btn-primary" onclick="addTask()">Agregar</button>
+        </div>
+      </div>
+    </div>
+  
+    <ul class="nav nav-tabs" id="tabs">
+      <li class="nav-item">
+        <a class="nav-link active" id="pendingTab" data-toggle="tab" href="#pending">Tareas Pendientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="completedTab" data-toggle="tab" href="#completed">Tareas Completadas</a>
+      </li>
+    </ul>
+  
+    <div class="tab-content mt-2">
+      <div class="tab-pane fade show active" id="pending">
+        <h3>Tareas Pendientes:</h3>
+        <ul class="list-group" id="pendingTaskList"></ul>
+      </div>
+      <div class="tab-pane fade" id="completed">
+        <h3>Tareas Completadas:</h3>
+        <ul class="list-group" id="completedTaskList"></ul>
+      </div>
+    </div>
+  
+    <div id="logs">
+      <h3>Registros:</h3>
+      <!-- Aquí se mostrarán los registros -->
+    </div>
+  
+    <!-- Detalles de Tarea Modal -->
+    <div class="modal fade" id="taskDetailsModal" tabindex="-1" role="dialog" aria-labelledby="taskDetailsModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="taskDetailsModalLabel">Detalles de Tarea</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="taskDetailsBody">
+            <!-- Aquí se mostrarán los detalles de la tarea -->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
